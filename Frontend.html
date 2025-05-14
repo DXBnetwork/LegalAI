@@ -1,75 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Legal Assistant</title>
-  <!-- Web Chat CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.botframework.com/botframework-webchat/latest/webchat.css"
-  />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    /* Top banner */
-    #banner {
-      background-color: #0078D4;
-      color: white;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-    }
-    #banner h1 {
-      margin: 0;
-      font-size: 20px;
-    }
-    /* Chat container fills the rest */
-    #chat-container {
-      display: flex;
-      flex-direction: column;
-      height: calc(100% - 60px);
-    }
-    /* Web Chat itself will stretch to fill */
-    #webchat {
-      flex: 1;
-    }
-  </style>
-</head>
-<body>
-  <div id="banner">
-    <h1>Legal Assistant</h1>
-  </div>
-  <div id="chat-container">
-    <div id="webchat" role="main"></div>
-  </div>
+  <head>
+    <meta charset="utf-8" />
+    <title> Legal Assistant</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
 
-  <!-- Web Chat JS bundle -->
-  <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
-  <script>
-    (async function() {
-      const token = 'YOUR_CHANNEL_TOKEN_HERE';
-      const directLine = window.WebChat.createDirectLine({ token });
-      
-      window.WebChat.renderWebChat(
-        {
-          directLine,
-          userID: 'user-' + Date.now(),   // optional: a unique user ID
-          username: 'You',
-          locale: 'en-US',
-          styleOptions: {
-            botAvatarInitials: 'LA',
-            userAvatarInitials: 'You',
-            hideUploadButton: true
-          }
-        },
-        document.getElementById('webchat')
-      );
-    })();
-  </script>
-</body>
+      #banner {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        height: 50px;
+      }
+
+      #banner h1 {
+        color: whitesmoke;
+        font-family: Segoe UI;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0 0 0 20px;
+      }
+
+      /* This makes the iframe sit directly below the banner
+         and fill the rest of the viewport */
+      #chat-frame {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 50px);
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner">
+      <h1>Contoso agent name</h1>
+    </div>
+
+    <!-- ←── Replace the old Web Chat div + scripts with this iframe ──→ -->
+    <iframe
+      id="chat-frame"
+      src="https://copilotstudio.microsoft.com/environments/Default-d509b6c8-e5f8-497b-abde-0f1a2a35a8f5/bots/cr5cd_legalAssistant/webchat?__version__=2"
+    ></iframe>
+  </body>
 </html>
