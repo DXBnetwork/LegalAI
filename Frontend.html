@@ -1,50 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title> Legal Assistant</title>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-      }
-
-      #banner {
-        display: flex;
-        align-items: center;
-        background-color: black;
-        height: 50px;
-      }
-
-      #banner h1 {
-        color: whitesmoke;
-        font-family: Segoe UI;
-        font-size: 16px;
-        line-height: 20px;
-        margin: 0 0 0 20px;
-      }
-
-      /* This makes the iframe sit directly below the banner
-         and fill the rest of the viewport */
-      #chat-frame {
-        position: fixed;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        height: calc(100% - 50px);
-        border: 0;
-      }
-    </style>
-  </head>
+  <head>…your head tags…</head>
   <body>
     <div id="banner">
       <h1>Contoso agent name</h1>
     </div>
 
-    <!-- ←── Replace the old Web Chat div + scripts with this iframe ──→ -->
+    <!-- ←── Paste your custom-website iframe here ──→ -->
     <iframe
       id="chat-frame"
-      src="https://copilotstudio.microsoft.com/environments/Default-d509b6c8-e5f8-497b-abde-0f1a2a35a8f5/bots/cr5cd_legalAssistant/webchat?__version__=2"
+      src="https://copilotstudio.microsoft.com/
+        environments/Default-d509b6c8-e5f8-497b-abde-0f1a2a35a8f5/
+        bots/cr5cd_legalAssistant/webchat
+        ?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9…&__version__=2"
+      width="100%"
+      height="100%"
+      style="border:0;"
     ></iframe>
   </body>
 </html>
